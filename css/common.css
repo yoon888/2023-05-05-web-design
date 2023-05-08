@@ -1,1 +1,305 @@
 @charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: initial;
+}
+
+body{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222328;
+    background-color: #fff;
+}
+
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* header */
+.header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    text-indent: -9999px;
+    background-image: url('../images/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gnb{
+    display: flex;
+    align-items: center;
+}
+
+.gnb > li {
+    position: relative;
+}
+
+.gnb > li > a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 50px;
+    position: relative;
+}
+
+.gnb > li > a:hover {
+    color: tomato;
+}
+
+.gnb > li > a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: tomato;
+}
+
+.gnb ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    padding: 8px 0;
+    display: none;
+}
+
+.gnb ul li a {
+    display: block;
+    padding: 10px 0;
+}
+
+.gnb ul li a:hover {
+    background-color: tomato;
+    color: #fff;
+}
+
+/* slide */
+.slide {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide .items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.slide img {
+    display: block;
+}
+
+/* contents */
+.contents{
+    height: 200px;
+    padding: 10px 0;
+    display: flex;
+    /* align-items: center; */
+    gap: 20px;
+}
+
+.contents img{
+    /* display: none; */
+}
+
+.tab{
+    flex: 1;
+}
+
+.tab_title {
+    display: flex;
+    gap: 4px;
+    position: relative;
+}
+.tab_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: tomato;
+}
+
+.tab_title a{
+    display: block;
+    flex: 1;
+    height: 50px;
+    background-color: #ddd;
+    line-height: 50px;
+    text-align: center;
+}
+.tab_title a.active {
+    background-color: tomato;
+    color: #fff;
+}
+
+.tab_contents {
+    position: relative;
+    height: 130px;
+}
+
+.tab_contents ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tab_contents .notice {
+    padding: 10px;
+    /* display: none; */
+}
+
+.tab_contents .notice li a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 0;
+}
+
+.tab_contents .notice li a:hover {
+    text-decoration: underline;
+}
+
+.tab_contents .gallery {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    padding: 20px 10px;
+    display: none;
+}
+
+.tab_contents .gallery li {
+    background-color: red;
+}
+
+.tab_contents .gallery img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.banner{
+    flex: 1;
+}
+.banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.link{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.link a {
+    display: block;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.link a:hover {
+    background-color: #eee;
+}
+
+/* footer */
+.footer {
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.sns {
+    display: flex;
+    gap: 16px;
+}
+
+.sns a {
+    display: block;
+    font-size: 12px;
+    background-color: #fff;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+.sns a:hover {
+    background-color: #ccc;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 460px;
+    background-color: #fff;
+    border: 1px solid #666;
+    padding: 50px 40px;
+}
+
+.modal h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.modal p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.modal .close {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+}
